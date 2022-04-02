@@ -20,6 +20,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { DeviceCardComponent } from './componenets/device-card/device-card.component';
+import { RoomCardComponent } from './componenets/room-card/room-card.component';
+import { FloorCardComponent } from './componenets/floor-card/floor-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DeviceCardComponent,
+    RoomCardComponent,
+    FloorCardComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,12 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
+    MatSnackBarModule,
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

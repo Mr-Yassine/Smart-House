@@ -1,1 +1,78 @@
-<p>dashboard works!</p>
+<div class="container">
+
+    <h1>Welcome to your dahsboard</h1>
+  
+    
+
+    <div class="d-flex">
+        <nav mat-tab-nav-bar [backgroundColor]="background" mat-align-tabs="center" class="header">
+            <a mat-tab-link *ngFor="let link of links"
+               (click)="activeLink = link; switch();"
+               [active]="activeLink == link"> {{link}}       
+            </a>
+        </nav>
+        <button mat-raised-button color="accent" (click)="toggleBackground()">
+            <mat-icon>colorize</mat-icon>
+        </button>
+    </div>
+
+
+    <div class="content">
+
+        <div *ngIf="c1">
+            <div class="cardList" *ngIf="c1">
+                <div class="left">
+                    <app-room-card></app-room-card>
+                </div>
+
+                <div class="right">
+                    <form>
+                        <input name="room" [(ngModel)]="myRoom.room" class="form-control" placeholder="Enter your room">
+                            
+                        <button mat-raised-button class="action-button" type="submit" (click)="addRoom()">
+                            Add <mat-icon>add</mat-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>        
+        </div>
+
+        <div *ngIf="c2">
+            <div class="cardList" *ngIf="c2">
+                <div class="left">
+                    <app-device-card></app-device-card>
+                </div>
+
+                <div class="right">
+                    <form>
+                        <input name="device" [(ngModel)]="myDevice.device" class="form-control" placeholder="Enter your device">
+                            
+                        <button mat-raised-button class="action-button" type="submit" (click)="addDevice()">
+                            Add <mat-icon>add</mat-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>        
+        </div>
+
+        <div *ngIf="c3">
+            <div class="cardList" *ngIf="c3">
+                <div class="left">
+                    <app-floor-card></app-floor-card>
+                </div>
+
+                <div class="right">
+                    <form>
+                        <input name="floor" [(ngModel)]="myFloor.floor" class="form-control" placeholder="Enter your floor">
+                            
+                        <button mat-raised-button class="action-button" type="submit" (click)="addFloor()">
+                            Add <mat-icon>add</mat-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>        
+        </div>
+
+    </div>
+      
+</div>

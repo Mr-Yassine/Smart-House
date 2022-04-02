@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private cardService: CardService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCards();
+  }
 
 
   id = "";
@@ -32,6 +34,13 @@ export class HomeComponent implements OnInit {
   }
 
 
+  getCards(){
+    this.cardService.getCards()
+      .subscribe((cards: ICards[]) => {this.cards = cards;
+        console.log(this.cards);
+      })
+  }
+
   addCard() {
    
     if (this.myCard.device != "" && this.myCard.room != "" && this.myCard.floor != "") {
@@ -47,6 +56,8 @@ export class HomeComponent implements OnInit {
     } else {
       alert("Please fill all the fields");
     }
+
+    this.getCards();
    
   }
 
