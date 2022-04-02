@@ -16,24 +16,12 @@ export class RoomCardComponent implements OnInit {
   }
 
   rooms : IRoom[] = []; 
-  myRoom: IRoom = {
-    room : ""
-  }
 
   getRooms(){
     this.cardService.getRooms()
       .subscribe((rooms: IRoom[]) => {this.rooms = rooms;
         console.log(this.rooms);
       })
-  }
-
-  addRoom(){
-    this.cardService.addRoom(this.myRoom)
-      .subscribe((room)=> {
-        this.rooms = [room, ...this.rooms];
-      })
-
-      this.myRoom.room = "";
   }
 
 }

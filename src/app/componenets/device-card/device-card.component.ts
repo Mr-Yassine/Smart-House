@@ -17,23 +17,11 @@ export class DeviceCardComponent implements OnInit {
   }
 
   devices : IDevices[] = []; 
-  myDevice: IDevices = {
-    device : ""
-  }
 
   getDevices(){
     this.cardService.getDevices()
       .subscribe((devices: IDevices[]) => {this.devices = devices;
         console.log(this.devices);
       })
-  }
-
-  addDevice(){
-    this.cardService.addDevice(this.myDevice)
-      .subscribe((device)=> {
-        this.devices = [device, ...this.devices];
-      })
-
-      this.myDevice.device = "";
   }
 }

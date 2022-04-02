@@ -16,9 +16,7 @@ export class FloorCardComponent implements OnInit {
   }
 
   floors : IFloor[] = []; 
-  myFloor: IFloor = {
-    floor : ""
-  }
+
 
   getFloors(){
     this.cardService.getFloors()
@@ -27,13 +25,5 @@ export class FloorCardComponent implements OnInit {
       })
   }
 
-  addFloor(){
-    this.cardService.addFloor(this.myFloor)
-      .subscribe((floor)=> {
-        this.floors = [floor, ...this.floors];
-      })
-
-      this.myFloor.floor = "";
-  }
 
 }
