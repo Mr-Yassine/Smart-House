@@ -1,0 +1,9 @@
+.navbar {
+    padding: 0;
+}
+.navbar a{
+    font-size: 18px;
+}
+.spacer {
+    flex: 1 1 auto;
+}

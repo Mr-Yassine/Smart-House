@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="left">
+        <h1>Manage your devices</h1>
+
+        <form>
+            <input name="device" [(ngModel)]="myCard.device" class="form-control" placeholder="Enter your device">
+            <input name="room" [(ngModel)]="myCard.room" class="form-control" placeholder="Enter your room">
+            <input name="floor" [(ngModel)]="myCard.floor" class="form-control" placeholder="Enter your floor">
+                {{myCard | json}}
+            <button mat-raised-button class="action-button" (click)="addCard()" type="submit">
+                Add card <mat-icon>add</mat-icon>
+            </button>
+        </form>
+    </div>
+
+
+
+    <div class="listOfCard">
+        <p>List of your devices</p>
+        <hr>
+        <app-card></app-card>
+    </div>
+    
+</div>

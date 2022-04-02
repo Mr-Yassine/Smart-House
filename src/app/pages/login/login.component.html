@@ -1,0 +1,60 @@
+<div class="container">
+
+    <div class="left-side">
+
+        <div class="text">
+            <p>
+                If you don’t have an account,<br> You can <a routerLink="/register">Register here !</a>
+            </p>
+        </div>
+
+        <img src="assets/images/person.svg" alt="">
+
+    </div>
+
+    <div class="right-side">
+
+        <h1>Sign In</h1>
+        <pre></pre>
+        <pre></pre>
+
+        
+        <form class="form">
+
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Enter your Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [(ngModel)]="email" placeholder="Ex. name@example.com">
+                 <br>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                </mat-error>
+                
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Enter your Password</mat-label>
+                <input type="password" matInput [formControl]="passwordFormControl" [(ngModel)]="password"  placeholder="Enter your password">
+                <br>
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <pre></pre>
+
+
+            <button mat-raised-button color="primary" type="submit" (click)="login()">
+                Login
+            </button>
+
+        </form>
+    
+        
+    </div>
+    
+    
+</div>
+
+

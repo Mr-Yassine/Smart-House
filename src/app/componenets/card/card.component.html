@@ -1,0 +1,26 @@
+<div class="container" >
+    <mat-card class="card" [ngStyle]="{'background-color': '#' + bgColor}" *ngFor="let card of cards"> 
+        <div class="content" >
+            <div class="left">
+
+                <div [ngClass]="{'material-icons-outlined' : card.on, 'cercle' : card.off}" (click)="play(card.id)">
+                    <mat-icon *ngIf="card.off">play_arrow</mat-icon>
+                    <mat-icon *ngIf="card.on">pause</mat-icon>
+                </div>
+
+                <div>
+                    <p>Device: <b>{{card.device}}</b> </p>
+                    <p>Room: <b>{{card.room}}</b> </p>
+                    <p>Floor: <b>{{card.floor}}</b> </p>
+                    <p>Status: <b>{{card.status}}</b> </p>
+                </div>
+
+            </div>
+            <div class="right">
+                <button mat-raised-button class="action-button" (click)="removeCard(card.id)" type="submit">
+                    Delete <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-card>
+</div>

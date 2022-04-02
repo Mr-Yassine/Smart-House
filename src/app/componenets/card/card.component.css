@@ -1,0 +1,74 @@
+
+.card {
+    width: 100%;
+    padding: 2%;
+    margin: 2% 0;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+.card .content{
+    width: 100%;      
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.content .left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    text-align: left;
+}
+.content .cercle {
+    background-color: #ffffff;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    margin-right: 2em;
+    position: relative;
+    cursor: pointer;
+}
+.cercle mat-icon {
+    font-size: 5em !important;
+    position: relative;
+    top: 9%;
+    left: 8.8%;
+    color: #ffd7d7;
+    cursor: pointer;
+}
+.material-icons-outlined {
+    background-color: rgb(226, 70, 70);
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    margin-right: 2em;
+    position: relative;
+    cursor: pointer;
+}
+.material-icons-outlined mat-icon {
+    font-size: 5em !important;
+    position: relative;
+    top: 9%;
+    left: 8.8%;
+    color: #f1ffe8;
+    cursor: pointer;
+}
+
+
+
+.content .right {
+    width: 30%;
+}
+.card button {
+    background-color: rgb(255, 27, 27);
+    color: #FFFFFF;
+    padding: 0% 18%;
+    width: auto;
+    min-width: auto;
+    height: 3rem;
+    font-size: 1em;
+}

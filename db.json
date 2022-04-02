@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Yassine",
+      "phone": "0612345678",
+      "email": "yassine@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "name": "BILAL",
+      "phone": "0698765432",
+      "email": "bilal@gmail.com",
+      "password": "321"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "device": "TV",
+      "floor": "Floor 1",
+      "room": "Living Room",
+      "status": "OFF",
+      "on": false,
+      "off": true
+    },
+    {
+      "id": 2,
+      "device": "Lamp",
+      "floor": "Floor 3",
+      "room": "Bed Room",
+      "status": "OFF",
+      "on": true,
+      "off": false
+    }
+  ],
+  "roomList": [
+    {
+      "room": "Bedroom"
+    },
+    {
+      "room": "Living Room"
+    }
+  ],
+  "deviceList": [
+    {
+      "device": "TV"
+    },
+    {
+      "device": "Lamp"
+    }
+  ],
+  "floorList": [
+    {
+      "floor": "Floor 1"
+    },
+    {
+      "floor": "Floor 4"
+    }
+  ]
+}
