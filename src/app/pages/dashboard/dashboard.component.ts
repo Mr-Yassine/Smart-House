@@ -37,6 +37,14 @@ export class DashboardComponent implements OnInit {
     this.getDevices();
     this.getRooms();
     this.getFloors();
+
+    this.cardService.refresh$
+      .subscribe(() => {
+        this.getDevices();
+        this.getRooms();
+        this.getFloors();
+      }
+    );
   }
 
 
@@ -118,8 +126,6 @@ export class DashboardComponent implements OnInit {
     } else {
       alert("Please fill the field");
     }
-
-    this.getDevices();  
   }
 
 
@@ -150,8 +156,6 @@ export class DashboardComponent implements OnInit {
     } else {
       alert("Please fill the field");
     }
-
-    this.getFloors();
   }
 
 

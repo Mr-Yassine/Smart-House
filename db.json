@@ -40,6 +40,15 @@
       "status": "ON",
       "on": true,
       "off": false
+    },
+    {
+      "id": 1649011147,
+      "device": "Lamp",
+      "room": "Living Room",
+      "floor": "Floor 4",
+      "off": true,
+      "on": false,
+      "status": "OFF"
     }
   ],
   "rooms": [
