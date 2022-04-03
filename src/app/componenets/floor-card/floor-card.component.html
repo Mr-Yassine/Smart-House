@@ -1,7 +1,7 @@
 <div class="container">
     <mat-card *ngFor="let floor of floors">
         {{floor.floor}}
-        <button mat-raised-button color="warn" (click)="delete()" type="submit">
+        <button mat-raised-button color="warn" (click)="delete(floor.id)" type="submit">
             <mat-icon>delete</mat-icon>
         </button>
     </mat-card>

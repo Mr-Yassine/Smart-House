@@ -26,6 +26,8 @@ import { MatTableModule } from '@angular/material/table';
 import { DeviceCardComponent } from './componenets/device-card/device-card.component';
 import { RoomCardComponent } from './componenets/room-card/room-card.component';
 import { FloorCardComponent } from './componenets/floor-card/floor-card.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { FloorCardComponent } from './componenets/floor-card/floor-card.componen
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatSelectModule,
 
     MatSnackBarModule,
     MatTabsModule,

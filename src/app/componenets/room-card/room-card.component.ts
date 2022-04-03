@@ -24,5 +24,10 @@ export class RoomCardComponent implements OnInit {
       })
   }
 
-  delete(){}
+  delete(id: any){
+    this.cardService.deleteRoom(id)
+    .subscribe(() => {
+      this.rooms = this.rooms.filter(room => room.id !== id)
+    })
+  }
 }

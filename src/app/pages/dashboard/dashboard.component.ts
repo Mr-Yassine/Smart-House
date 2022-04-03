@@ -118,28 +118,37 @@ export class DashboardComponent implements OnInit {
       alert("Please fill the field");
     }
 
-    this.getDevices();
-   
+    this.getDevices();  
   }
 
 
 
   addRoom(){
-    this.cardService.addRoom(this.myRoom)
+    if (this.myRoom.room != "" ) {
+      this.cardService.addRoom(this.myRoom)
       .subscribe((room)=> {
         this.rooms = [room, ...this.rooms];
       })
-
       this.myRoom.room = "";
+
+    } else {
+      alert("Please fill the field");
+    }
   }
 
   addFloor(){
-    this.cardService.addFloor(this.myFloor)
+    if (this.myFloor.floor != "" ) {
+      this.cardService.addFloor(this.myFloor)
       .subscribe((floor)=> {
         this.floors = [floor, ...this.floors];
       })
-
       this.myFloor.floor = "";
+
+    } else {
+      alert("Please fill the field");
+    }
+
+    this.getFloors();
   }
 
 

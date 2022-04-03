@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { ICards } from 'src/app/models/icards';
+import { IDevices } from 'src/app/models/idevices';
+import { IRoom } from 'src/app/models/iroom';
+import { IFloor } from 'src/app/models/ifloor';
 
 @Component({
   selector: 'app-home',
@@ -10,17 +13,44 @@ import { ICards } from 'src/app/models/icards';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
     this.getCards();
+    this.getDevices();
+    this.getRooms();
+    this.getFloors();
   }
 
 
-  id = "";
-  device = "";
-  room = "";
-  floor = "";
+  devices : IDevices[] = [];
+  getDevices(){
+    this.cardService.getDevices()
+      .subscribe((devices: IDevices[]) => {this.devices = devices;
+        console.log(this.devices);
+      })
+  }
+
+
+  rooms : IRoom[] = [];
+  getRooms(){
+    this.cardService.getRooms()
+      .subscribe((rooms: IRoom[]) => {this.rooms = rooms;
+        console.log(this.rooms);
+      })
+  }
+
+  
+  floors : IFloor[] = [];
+  getFloors(){
+    this.cardService.getFloors()
+      .subscribe((floors: IFloor[]) => {this.floors = floors;
+        console.log(this.floors);
+      })
+  }
+ 
+
+
 
   cards : ICards[] = []; 
 

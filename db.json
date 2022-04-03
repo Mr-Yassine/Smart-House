@@ -21,9 +21,9 @@
       "device": "TV",
       "floor": "Floor 1",
       "room": "Living Room",
-      "status": "OFF",
-      "on": false,
-      "off": true
+      "status": "ON",
+      "on": true,
+      "off": false
     },
     {
       "id": 2,
@@ -33,6 +33,15 @@
       "status": "ON",
       "on": true,
       "off": false
+    },
+    {
+      "id": 1648961216,
+      "device": "speaker",
+      "room": "Family room",
+      "floor": "Floor 0",
+      "off": true,
+      "on": false,
+      "status": "OFF"
     }
   ],
   "rooms": [
@@ -57,10 +66,6 @@
     {
       "id": 2,
       "device": "Lamp"
-    },
-    {
-      "id": 1648944924,
-      "device": "Speaker"
     }
   ],
   "floors": [

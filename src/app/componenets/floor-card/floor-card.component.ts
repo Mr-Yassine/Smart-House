@@ -26,5 +26,10 @@ export class FloorCardComponent implements OnInit {
   }
 
 
-  delete(){}
+  delete(id:any){
+    this.cardService.deleteFloor(id)
+    .subscribe(()=> {
+      this.floors = this.floors.filter(floor => floor.id != id)
+    })
+  }
 }

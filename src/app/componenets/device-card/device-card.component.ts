@@ -29,5 +29,10 @@ export class DeviceCardComponent implements OnInit {
       })
   }
 
-  delete(){}
+  delete(id:any){
+    this.cardService.deleteDevice(id)
+    .subscribe(() => {
+      this.devices = this.devices.filter(device => device.id !== id)
+    })
+  }
 }

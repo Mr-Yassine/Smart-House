@@ -4,10 +4,37 @@
         <h1>Manage your devices</h1>
 
         <form>
-            <input name="device" [(ngModel)]="myCard.device" class="form-control" placeholder="Enter your device">
+            <mat-form-field appearance="outline">
+                <mat-label>Select your device</mat-label>
+                <mat-select [(ngModel)]="myCard.device" name="device">
+                  <mat-option *ngFor="let device of devices" [value]="device.device">
+                    {{device.device}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Select your room</mat-label>
+                <mat-select [(ngModel)]="myCard.room" name="room">
+                  <mat-option *ngFor="let room of rooms" [value]="room.room">
+                    {{room.room}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Select your floor</mat-label>
+                <mat-select [(ngModel)]="myCard.floor" name="floor">
+                  <mat-option *ngFor="let floor of floors" [value]="floor.floor">
+                    {{floor.floor}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- <input name="device" [(ngModel)]="myCard.device" class="form-control" placeholder="Enter your device">
             <input name="room" [(ngModel)]="myCard.room" class="form-control" placeholder="Enter your room">
-            <input name="floor" [(ngModel)]="myCard.floor" class="form-control" placeholder="Enter your floor">
-                {{myCard | json}}
+            <input name="floor" [(ngModel)]="myCard.floor" class="form-control" placeholder="Enter your floor"> -->
+                <!-- {{myCard | json}} -->
             <button mat-raised-button class="action-button" (click)="addCard()" type="submit">
                 Add card <mat-icon>add</mat-icon>
             </button>
