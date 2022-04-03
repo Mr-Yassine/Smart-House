@@ -67,12 +67,15 @@ export class DashboardComponent implements OnInit {
   floors : IFloor[] = []; 
 
   myDevice: IDevices = {
+    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
     device : ""
   }
   myRoom: IRoom = {
+    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
     room : ""
   }
   myFloor: IFloor = {
+    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
     floor : ""
   }
   
@@ -100,16 +103,29 @@ export class DashboardComponent implements OnInit {
 
 
 
-
-
-  addDevice(){
-    this.cardService.addDevice(this.myDevice)
+  addDevice() {
+   
+    if (this.myDevice.device != "" ) {
+      this.cardService.addDevice(this.myDevice)
       .subscribe((device)=> {
+        console.log(device);
+        
         this.devices = [device, ...this.devices];
+        console.log(this.devices);
+        
       })
 
       this.myDevice.device = "";
+
+    } else {
+      alert("Please fill the field");
+    }
+
+    this.getDevices();
+   
   }
+
+
 
   addRoom(){
     this.cardService.addRoom(this.myRoom)

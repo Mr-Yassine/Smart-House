@@ -46,25 +46,39 @@
   ],
   "rooms": [
     {
+      "id": 1,
       "room": "Bedroom"
     },
     {
+      "id": 2,
       "room": "Living Room"
+    },
+    {
+      "id": 1648945187,
+      "room": "Shower Room"
     }
   ],
   "devices": [
     {
+      "id": 1,
       "device": "TV"
     },
     {
+      "id": 2,
       "device": "Lamp"
+    },
+    {
+      "id": 1648944924,
+      "device": "Speaker"
     }
   ],
   "floors": [
     {
+      "id": 1,
       "floor": "Floor 1"
     },
     {
+      "id": 2,
       "floor": "Floor 4"
     }
   ]

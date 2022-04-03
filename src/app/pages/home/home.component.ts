@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   cards : ICards[] = []; 
 
   myCard: ICards = {
+    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
     device : "",
     room : "",
     floor : "",
