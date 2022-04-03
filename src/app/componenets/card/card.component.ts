@@ -9,14 +9,11 @@ import { ICards } from 'src/app/models/icards';
 })
 export class CardComponent implements OnInit {
 
-  bgColor: string;
   cards : ICards[] = [];
   
 
 
-  constructor(private cardService: CardService) {
-    this.bgColor = 'ffd7d7';
-  }
+  constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
     this.getCards();
@@ -30,34 +27,24 @@ export class CardComponent implements OnInit {
       })
   }
 
+  play(card: ICards){
+    this.cardService.updateCard(card)
 
-  play(id:any) {
-
-    this.cardService.getCard(id) 
-      .subscribe((card: ICards) => {
-
-        if(card.on){
-          console.log(card.id);
-          this.bgColor = '#ffd7d7';
-          card.status = 'ON';
-          card.off = false;
-          card.on = true;
-
-        } else {
-          this.bgColor = '#f1ffe8';
-          card.status = 'OFF';
-          card.off = true;
-          card.on = false;
-        }
-
+    .subscribe(() => {
+      if (card.off){
+        card.off = false;
+        card.on = true;
+        card.status = 'ON';
+      }
+      else{
+        card.off = true;
+        card.on = false;
+        card.status = 'OFF';
+      }
         console.log(card);
-
-      })  
-
+    })
   }
 
-
-  
 
   removeCard(id:any): void{
     this.cardService.deleteCard(id)

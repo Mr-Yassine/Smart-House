@@ -107,12 +107,9 @@ export class DashboardComponent implements OnInit {
    
     if (this.myDevice.device != "" ) {
       this.cardService.addDevice(this.myDevice)
-      .subscribe((device)=> {
-        console.log(device);
-        
+      .subscribe((device)=> {        
         this.devices = [device, ...this.devices];
         console.log(this.devices);
-        
       })
 
       this.myDevice.device = "";

@@ -1,11 +1,11 @@
 <div class="container" >
-    <mat-card class="card" [ngStyle]="{'background-color': '#' + bgColor}" *ngFor="let card of cards"> 
+    <mat-card class="card" [ngStyle]="{'background-color':card.off ? '#ffd7d7' : '#d7ffd7'}" *ngFor="let card of cards"> 
         <div class="content" >
             <div class="left">
 
-                <div [ngClass]="{'material-icons-outlined' : card.on, 'cercle' : card.off}" (click)="play(card.id)">
+                <div [ngClass]="{'material-icons-outlined' : !card.off, 'cercle' : card.off}" (click)="play(card)">
                     <mat-icon *ngIf="card.off">play_arrow</mat-icon>
-                    <mat-icon *ngIf="card.on">pause</mat-icon>
+                    <mat-icon *ngIf="!card.off">pause</mat-icon>
                 </div>
 
                 <div>

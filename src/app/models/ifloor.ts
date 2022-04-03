@@ -1,4 +1,4 @@
 export interface IFloor {
-    id ?: number;
+    id : number;
     floor : string;
 }

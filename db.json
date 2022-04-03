@@ -30,7 +30,7 @@
       "device": "Lamp",
       "floor": "Floor 3",
       "room": "Bed Room",
-      "status": "OFF",
+      "status": "ON",
       "on": true,
       "off": false
     }

@@ -1,4 +1,4 @@
 export interface IDevices {
-    id ?: number;
+    id : number;
     device : string;
 }

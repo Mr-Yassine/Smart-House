@@ -25,14 +25,12 @@ export class CardService {
   }
 
   updateCard(card:ICards){
-    return this.http.put('http://localhost:3000/cards/'+card.id,card);
+    return this.http.patch('http://localhost:3000/cards/'+card.id,card);
   }
 
   deleteCard(id:number){
     return this.http.delete('http://localhost:3000/cards/'+id);
   }
-
-
 
 
 
