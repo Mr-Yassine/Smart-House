@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IDevices } from 'src/app/models/idevices';
 import { CardService } from 'src/app/services/cards/card.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 
@@ -14,7 +15,7 @@ import { CardService } from 'src/app/services/cards/card.service';
 })
 export class DeviceCardComponent implements OnInit {
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getDevices();
@@ -34,5 +35,7 @@ export class DeviceCardComponent implements OnInit {
     .subscribe(() => {
       this.devices = this.devices.filter(device => device.id !== id)
     })
+
+    this._snackBar.open("Device deleted successfully", "close");
   }
 }

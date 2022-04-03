@@ -13,6 +13,13 @@
       "phone": "0698765432",
       "email": "bilal@gmail.com",
       "password": "321"
+    },
+    {
+      "id": 1649005300,
+      "name": "sd",
+      "phone": "9393",
+      "email": "d@DZ",
+      "password": "dz"
     }
   ],
   "cards": [
@@ -21,27 +28,18 @@
       "device": "TV",
       "floor": "Floor 1",
       "room": "Living Room",
-      "status": "ON",
-      "on": true,
-      "off": false
+      "status": "OFF",
+      "on": false,
+      "off": true
     },
     {
       "id": 2,
       "device": "Lamp",
       "floor": "Floor 3",
       "room": "Bed Room",
-      "status": "ON",
-      "on": true,
-      "off": false
-    },
-    {
-      "id": 1648961216,
-      "device": "speaker",
-      "room": "Family room",
-      "floor": "Floor 0",
-      "off": true,
+      "status": "OFF",
       "on": false,
-      "status": "OFF"
+      "off": true
     }
   ],
   "rooms": [

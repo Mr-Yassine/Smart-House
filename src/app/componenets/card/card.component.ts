@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { ICards } from 'src/app/models/icards';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-card',
@@ -13,7 +14,7 @@ export class CardComponent implements OnInit {
   
 
 
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.getCards();
@@ -51,6 +52,8 @@ export class CardComponent implements OnInit {
       .subscribe(() => {
         this.cards = this.cards.filter(card => card.id !== id);
       })
+
+      this._snackBar.open("Card deleted successfully", "close");
   }
 
 }

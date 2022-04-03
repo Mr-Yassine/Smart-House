@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/users/user.service';
 import { IUsers } from 'src/app/models/iusers';
 import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -63,6 +64,8 @@ export class RegisterComponent implements OnInit {
           this.MyUser.phone = '';
           this.MyUser.email = '';
           this.MyUser.password = '';
+
+          this._snackBar.open("User registred successfully", "close");
 
           this.router.navigateByUrl("/login")
         }

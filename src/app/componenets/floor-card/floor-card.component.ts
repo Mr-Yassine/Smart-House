@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { IFloor } from 'src/app/models/ifloor';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-floor-card',
@@ -9,7 +11,7 @@ import { IFloor } from 'src/app/models/ifloor';
 })
 export class FloorCardComponent implements OnInit {
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getFloors();
@@ -31,5 +33,7 @@ export class FloorCardComponent implements OnInit {
     .subscribe(()=> {
       this.floors = this.floors.filter(floor => floor.id != id)
     })
+
+    this._snackBar.open("Floor deleted successfully", "close");
   }
 }
