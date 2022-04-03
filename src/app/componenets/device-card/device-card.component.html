@@ -1,5 +1,8 @@
 <div class="container">
     <mat-card *ngFor="let device of devices">
         {{device.device}}
+        <button mat-raised-button color="warn" (click)="delete()" type="submit">
+            <mat-icon>delete</mat-icon>
+        </button>
     </mat-card>
 </div>

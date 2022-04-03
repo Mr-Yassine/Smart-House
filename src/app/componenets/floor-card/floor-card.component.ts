@@ -26,4 +26,5 @@ export class FloorCardComponent implements OnInit {
   }
 
 
+  delete(){}
 }

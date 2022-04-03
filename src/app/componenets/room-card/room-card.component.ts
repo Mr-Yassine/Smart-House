@@ -24,4 +24,5 @@ export class RoomCardComponent implements OnInit {
       })
   }
 
+  delete(){}
 }

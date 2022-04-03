@@ -3,6 +3,10 @@ import { IDevices } from 'src/app/models/idevices';
 import { CardService } from 'src/app/services/cards/card.service';
 
 
+
+
+
+
 @Component({
   selector: 'app-device-card',
   templateUrl: './device-card.component.html',
@@ -24,4 +28,6 @@ export class DeviceCardComponent implements OnInit {
         console.log(this.devices);
       })
   }
+
+  delete(){}
 }

@@ -33,15 +33,6 @@
       "status": "OFF",
       "on": true,
       "off": false
-    },
-    {
-      "device": "sxsx",
-      "room": "dsc",
-      "floor": "sdcsc",
-      "off": true,
-      "on": false,
-      "status": "OFF",
-      "id": 3
     }
   ],
   "rooms": [

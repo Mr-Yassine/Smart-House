@@ -27,6 +27,7 @@ import { DeviceCardComponent } from './componenets/device-card/device-card.compo
 import { RoomCardComponent } from './componenets/room-card/room-card.component';
 import { FloorCardComponent } from './componenets/floor-card/floor-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,7 @@ import { FloorCardComponent } from './componenets/floor-card/floor-card.componen
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
+    MatButtonModule,
 
     MatSnackBarModule,
     MatTabsModule,
