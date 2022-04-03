@@ -4,6 +4,7 @@ import { CardService } from 'src/app/services/cards/card.service';
 import { IDevices } from 'src/app/models/idevices';
 import { IFloor } from 'src/app/models/ifloor';
 import { IRoom } from 'src/app/models/iroom';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
   c3: boolean = false ; 
 
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     if(this.activeLink == "Room") {
@@ -111,7 +112,7 @@ export class DashboardComponent implements OnInit {
         this.devices = [device, ...this.devices];
         console.log(this.devices);
       })
-
+      this._snackBar.open("Device added successfully", "close");
       this.myDevice.device = "";
 
     } else {
@@ -129,6 +130,7 @@ export class DashboardComponent implements OnInit {
       .subscribe((room)=> {
         this.rooms = [room, ...this.rooms];
       })
+      this._snackBar.open("Room added successfully", "close");
       this.myRoom.room = "";
 
     } else {
@@ -142,6 +144,7 @@ export class DashboardComponent implements OnInit {
       .subscribe((floor)=> {
         this.floors = [floor, ...this.floors];
       })
+      this._snackBar.open("Floor added successfully", "close");
       this.myFloor.floor = "";
 
     } else {

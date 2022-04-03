@@ -28,18 +28,18 @@
       "device": "TV",
       "floor": "Floor 1",
       "room": "Living Room",
-      "status": "OFF",
-      "on": false,
-      "off": true
+      "status": "ON",
+      "on": true,
+      "off": false
     },
     {
       "id": 2,
       "device": "Lamp",
       "floor": "Floor 3",
       "room": "Bed Room",
-      "status": "OFF",
-      "on": false,
-      "off": true
+      "status": "ON",
+      "on": true,
+      "off": false
     }
   ],
   "rooms": [

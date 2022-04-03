@@ -4,6 +4,7 @@ import { ICards } from 'src/app/models/icards';
 import { IDevices } from 'src/app/models/idevices';
 import { IRoom } from 'src/app/models/iroom';
 import { IFloor } from 'src/app/models/ifloor';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { IFloor } from 'src/app/models/ifloor';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.getCards();
@@ -79,6 +80,8 @@ export class HomeComponent implements OnInit {
       .subscribe((card)=> {
         this.cards = [card, ...this.cards];
       })
+
+      this._snackBar.open("Card added successfully", "close");
 
       this.myCard.device = "";
       this.myCard.room = "";
