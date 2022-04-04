@@ -24,53 +24,8 @@
   ],
   "cards": [
     {
-      "id": 1,
+      "id": "b556921b-2d79-4130-a74f-36da530af7dc",
       "device": "TV",
-      "floor": "Floor 1",
-      "room": "Living Room",
-      "status": "ON",
-      "on": true,
-      "off": false
-    },
-    {
-      "id": 2,
-      "device": "Lamp",
-      "floor": "Floor 3",
-      "room": "Bed Room",
-      "status": "OFF",
-      "on": false,
-      "off": true
-    },
-    {
-      "id": "366fa387-18d2-4f80-8f52-5692db0513c5",
-      "device": "Lamp",
-      "room": "Garden",
-      "floor": "Floor 1",
-      "off": true,
-      "on": false,
-      "status": "OFF"
-    },
-    {
-      "id": "8cecf9ec-c1ef-4ddb-b5e0-f8af97103ca2",
-      "device": "Lamp",
-      "room": "Garden",
-      "floor": "Floor 4",
-      "off": true,
-      "on": false,
-      "status": "OFF"
-    },
-    {
-      "id": "30343017-162f-4530-9a18-93e2593b4413",
-      "device": "Speaker",
-      "room": "Bedroom",
-      "floor": "Floor 4",
-      "off": true,
-      "on": false,
-      "status": "OFF"
-    },
-    {
-      "id": "b00e231e-3e32-44cc-830e-cd3ed0d297a0",
-      "device": "Lamp",
       "room": "Living Room",
       "floor": "Floor 4",
       "off": true,
@@ -78,16 +33,7 @@
       "status": "OFF"
     },
     {
-      "id": "b8b50cbf-d395-4ae4-8c16-938241c6b699",
-      "device": "Lamp",
-      "room": "Garden",
-      "floor": "Floor 4",
-      "off": true,
-      "on": false,
-      "status": "OFF"
-    },
-    {
-      "id": "03c1f599-d99a-4b46-8961-e61cf17b7d81",
+      "id": "36090656-17a5-4813-9ff7-bde662ab1c0f",
       "device": "Lamp",
       "room": "Living Room",
       "floor": "Floor 4",

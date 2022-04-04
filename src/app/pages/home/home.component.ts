@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit {
       this.myCard.floor = "";
       this.myCard.id = uuid.v4();
       this.eventsSubject.next();
-      this.getCards();
       
     } else {
       alert("Please fill all the fields");
