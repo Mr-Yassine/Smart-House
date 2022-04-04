@@ -4,6 +4,8 @@ import { UserService } from 'src/app/services/users/user.service';
 import { IUsers } from 'src/app/models/iusers';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import * as uuid from 'uuid';
+
 
 @Component({
   selector: 'app-register',
@@ -38,7 +40,7 @@ export class RegisterComponent implements OnInit {
 
  
   MyUser: IUsers = {
-    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
+    id : uuid.v4(),
     name: '',
     phone: '',
     email: '',
@@ -60,6 +62,7 @@ export class RegisterComponent implements OnInit {
               this.users = [user, ...this.users];
           })
 
+          this.MyUser.id = uuid.v4();
           this.MyUser.name = '';
           this.MyUser.phone = '';
           this.MyUser.email = '';

@@ -1,5 +1,5 @@
 export interface ICards {
-    id: number;
+    id: String;
     device: String;
     room: String;
     floor: String;

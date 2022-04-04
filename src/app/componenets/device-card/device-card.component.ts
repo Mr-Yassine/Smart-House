@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IDevices } from 'src/app/models/idevices';
 import { CardService } from 'src/app/services/cards/card.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Observable, Subscription } from 'rxjs';
 
 
 
@@ -19,9 +20,13 @@ export class DeviceCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDevices();
+    this.eventsSubscription = this.events.subscribe(() => this.getDevices());
   }
 
   devices : IDevices[] = []; 
+
+  private eventsSubscription: Subscription;
+  @Input() events: Observable<void>;
 
   getDevices(){
     this.cardService.getDevices()

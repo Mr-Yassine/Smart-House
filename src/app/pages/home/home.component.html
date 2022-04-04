@@ -46,7 +46,7 @@
     <div class="listOfCard">
         <p>List of your devices</p>
         <hr>
-        <app-card></app-card>
+        <app-card [events]="eventsSubject.asObservable()"></app-card>
     </div>
     
 </div>

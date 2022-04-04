@@ -4,20 +4,12 @@ import { ICards } from 'src/app/models/icards';
 import { IDevices } from 'src/app/models/idevices';
 import { IFloor } from 'src/app/models/ifloor';
 import { IRoom } from 'src/app/models/iroom';
-import { Observable, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-
-  private _refresh$ = new Subject<void>();
-
-  get refresh$(){
-    return this._refresh$;
-  }
-
 
 
   constructor(private http:HttpClient) { } 
@@ -31,13 +23,9 @@ export class CardService {
   }
 
   addCard(card:ICards){
-    return this.http.post<ICards>('http://localhost:3000/cards',card)
-
-      .pipe (
-        tap(() => {
-          this._refresh$.next();
-        })
-      );
+    console.log(card);
+    
+    return this.http.post<ICards>('http://localhost:3000/cards',card);
   }
 
   updateCard(card:ICards){
@@ -59,13 +47,7 @@ export class CardService {
   }
 
   addDevice(device:IDevices){
-    return this.http.post<IDevices>('http://localhost:3000/devices',device)
-
-    .pipe (
-      tap(() => {
-        this._refresh$.next();
-      })
-    );
+    return this.http.post<IDevices>('http://localhost:3000/devices',device);
   }
 
   updateDevice(device:IDevices){
@@ -88,13 +70,7 @@ export class CardService {
   }
 
   addRoom(room:IRoom){
-    return this.http.post<IRoom>('http://localhost:3000/rooms',room)
-
-    .pipe (
-      tap(() => {
-        this._refresh$.next();
-      })
-    );
+    return this.http.post<IRoom>('http://localhost:3000/rooms',room);
   }
 
   updateRoom(room:IRoom){
@@ -117,13 +93,7 @@ export class CardService {
   }
 
   addFloor(floor:IFloor){
-    return this.http.post<IFloor>('http://localhost:3000/floors',floor)
-
-    .pipe (
-      tap(() => {
-        this._refresh$.next();
-      })
-    );
+    return this.http.post<IFloor>('http://localhost:3000/floors',floor);
   }
 
   updateFloor(floor:IFloor){

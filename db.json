@@ -37,12 +37,57 @@
       "device": "Lamp",
       "floor": "Floor 3",
       "room": "Bed Room",
-      "status": "ON",
-      "on": true,
-      "off": false
+      "status": "OFF",
+      "on": false,
+      "off": true
     },
     {
-      "id": 1649011147,
+      "id": "366fa387-18d2-4f80-8f52-5692db0513c5",
+      "device": "Lamp",
+      "room": "Garden",
+      "floor": "Floor 1",
+      "off": true,
+      "on": false,
+      "status": "OFF"
+    },
+    {
+      "id": "8cecf9ec-c1ef-4ddb-b5e0-f8af97103ca2",
+      "device": "Lamp",
+      "room": "Garden",
+      "floor": "Floor 4",
+      "off": true,
+      "on": false,
+      "status": "OFF"
+    },
+    {
+      "id": "30343017-162f-4530-9a18-93e2593b4413",
+      "device": "Speaker",
+      "room": "Bedroom",
+      "floor": "Floor 4",
+      "off": true,
+      "on": false,
+      "status": "OFF"
+    },
+    {
+      "id": "b00e231e-3e32-44cc-830e-cd3ed0d297a0",
+      "device": "Lamp",
+      "room": "Living Room",
+      "floor": "Floor 4",
+      "off": true,
+      "on": false,
+      "status": "OFF"
+    },
+    {
+      "id": "b8b50cbf-d395-4ae4-8c16-938241c6b699",
+      "device": "Lamp",
+      "room": "Garden",
+      "floor": "Floor 4",
+      "off": true,
+      "on": false,
+      "status": "OFF"
+    },
+    {
+      "id": "03c1f599-d99a-4b46-8961-e61cf17b7d81",
       "device": "Lamp",
       "room": "Living Room",
       "floor": "Floor 4",
@@ -61,8 +106,8 @@
       "room": "Living Room"
     },
     {
-      "id": 1648945187,
-      "room": "Shower Room"
+      "id": 1649077818,
+      "room": "Garden"
     }
   ],
   "devices": [
@@ -73,6 +118,10 @@
     {
       "id": 2,
       "device": "Lamp"
+    },
+    {
+      "id": 1649078062,
+      "device": "Speaker"
     }
   ],
   "floors": [
@@ -81,7 +130,7 @@
       "floor": "Floor 1"
     },
     {
-      "id": 2,
+      "id": 1649078282,
       "floor": "Floor 4"
     }
   ]

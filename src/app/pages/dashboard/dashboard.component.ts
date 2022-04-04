@@ -5,6 +5,10 @@ import { IDevices } from 'src/app/models/idevices';
 import { IFloor } from 'src/app/models/ifloor';
 import { IRoom } from 'src/app/models/iroom';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subject } from 'rxjs';
+import * as uuid from 'uuid';
+
+
 
 
 @Component({
@@ -22,6 +26,7 @@ export class DashboardComponent implements OnInit {
   c2: boolean = false ; 
   c3: boolean = false ; 
 
+  eventsSubject: Subject<void> = new Subject<void>();
 
   constructor(private cardService: CardService, private _snackBar: MatSnackBar) { }
 
@@ -37,14 +42,6 @@ export class DashboardComponent implements OnInit {
     this.getDevices();
     this.getRooms();
     this.getFloors();
-
-    this.cardService.refresh$
-      .subscribe(() => {
-        this.getDevices();
-        this.getRooms();
-        this.getFloors();
-      }
-    );
   }
 
 
@@ -76,15 +73,15 @@ export class DashboardComponent implements OnInit {
   floors : IFloor[] = []; 
 
   myDevice: IDevices = {
-    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
+    id : uuid.v4(),
     device : ""
   }
   myRoom: IRoom = {
-    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
+    id : uuid.v4(),
     room : ""
   }
   myFloor: IFloor = {
-    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
+    id : uuid.v4(),
     floor : ""
   }
   
@@ -121,11 +118,15 @@ export class DashboardComponent implements OnInit {
         console.log(this.devices);
       })
       this._snackBar.open("Device added successfully", "close");
+      this.myDevice.id = uuid.v4();
       this.myDevice.device = "";
+      this.eventsSubject.next();
 
     } else {
       alert("Please fill the field");
     }
+
+    this.getDevices();
   }
 
 
@@ -137,7 +138,9 @@ export class DashboardComponent implements OnInit {
         this.rooms = [room, ...this.rooms];
       })
       this._snackBar.open("Room added successfully", "close");
+      this.myRoom.id = uuid.v4();
       this.myRoom.room = "";
+      this.eventsSubject.next();
 
     } else {
       alert("Please fill the field");
@@ -151,7 +154,9 @@ export class DashboardComponent implements OnInit {
         this.floors = [floor, ...this.floors];
       })
       this._snackBar.open("Floor added successfully", "close");
+      this.myFloor.id = uuid.v4();
       this.myFloor.floor = "";
+      this.eventsSubject.next();
 
     } else {
       alert("Please fill the field");

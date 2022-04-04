@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { IFloor } from 'src/app/models/ifloor';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Observable, Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -15,9 +17,13 @@ export class FloorCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFloors();
+    this.eventsSubscription = this.events.subscribe(() => this.getFloors());
   }
 
   floors : IFloor[] = []; 
+
+  private eventsSubscription: Subscription;
+  @Input() events: Observable<void>;
 
 
   getFloors(){

@@ -1,4 +1,4 @@
 export interface IRoom {
-    id : number;
+    id : String;
     room : string;
 }

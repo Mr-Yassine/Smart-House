@@ -5,6 +5,8 @@ import { IDevices } from 'src/app/models/idevices';
 import { IRoom } from 'src/app/models/iroom';
 import { IFloor } from 'src/app/models/ifloor';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Subject } from 'rxjs';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-home',
@@ -24,11 +26,14 @@ export class HomeComponent implements OnInit {
   }
 
 
+  eventsSubject: Subject<void> = new Subject<void>();
+
+
   devices : IDevices[] = [];
   getDevices(){
     this.cardService.getDevices()
       .subscribe((devices: IDevices[]) => {this.devices = devices;
-        console.log(this.devices);
+        console.log(this.devices.length);
       })
   }
 
@@ -56,7 +61,7 @@ export class HomeComponent implements OnInit {
   cards : ICards[] = []; 
 
   myCard: ICards = {
-    id: Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000),
+    id : uuid.v4(),
     device : "",
     room : "",
     floor : "",
@@ -69,7 +74,7 @@ export class HomeComponent implements OnInit {
   getCards(){
     this.cardService.getCards()
       .subscribe((cards: ICards[]) => {this.cards = cards;
-        console.log(this.cards);
+        console.log("cards" + this.cards);
       })
   }
 
@@ -86,12 +91,13 @@ export class HomeComponent implements OnInit {
       this.myCard.device = "";
       this.myCard.room = "";
       this.myCard.floor = "";
-
+      this.myCard.id = uuid.v4();
+      this.eventsSubject.next();
+      this.getCards();
+      
     } else {
       alert("Please fill all the fields");
     }
-
-    this.getCards();
    
   }
 

@@ -22,7 +22,7 @@
         <div *ngIf="c1">
             <div class="cardList" *ngIf="c1">
                 <div class="left">
-                    <app-room-card></app-room-card>
+                    <app-room-card [events]="eventsSubject.asObservable()"></app-room-card>
                 </div>
 
                 <div class="right">
@@ -40,7 +40,7 @@
         <div *ngIf="c2">
             <div class="cardList" *ngIf="c2">
                 <div class="left">
-                    <app-device-card></app-device-card>
+                    <app-device-card [events]="eventsSubject.asObservable()"></app-device-card>
                 </div>
 
                 <div class="right">
@@ -58,7 +58,7 @@
         <div *ngIf="c3">
             <div class="cardList" *ngIf="c3">
                 <div class="left">
-                    <app-floor-card></app-floor-card>
+                    <app-floor-card [events]="eventsSubject.asObservable()"></app-floor-card>
                 </div>
 
                 <div class="right">

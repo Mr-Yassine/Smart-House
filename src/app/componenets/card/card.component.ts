@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { ICards } from 'src/app/models/icards';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -12,12 +13,15 @@ export class CardComponent implements OnInit {
 
   cards : ICards[] = [];
   
-
+  
+  private eventsSubscription: Subscription;
+  @Input() events: Observable<void>;
 
   constructor(private cardService: CardService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.getCards();
+    this.eventsSubscription = this.events.subscribe(() => this.getCards());
   }
 
 
