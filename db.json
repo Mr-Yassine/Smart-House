@@ -20,6 +20,13 @@
       "phone": "9393",
       "email": "d@DZ",
       "password": "dz"
+    },
+    {
+      "id": "ab16d575-33dd-434d-9a78-6face1e444d2",
+      "name": "test",
+      "phone": "0653318885",
+      "email": "t@gmail.com",
+      "password": "123"
     }
   ],
   "cards": [
@@ -28,15 +35,15 @@
       "device": "TV",
       "room": "Living Room",
       "floor": "Floor 4",
-      "off": true,
-      "on": false,
-      "status": "OFF"
+      "off": false,
+      "on": true,
+      "status": "ON"
     },
     {
-      "id": "36090656-17a5-4813-9ff7-bde662ab1c0f",
-      "device": "Lamp",
+      "id": "61fb70b6-a1aa-4b3d-a856-b24d305c2b62",
+      "device": "Speaker",
       "room": "Living Room",
-      "floor": "Floor 4",
+      "floor": "Floor 2",
       "off": true,
       "on": false,
       "status": "OFF"
@@ -72,12 +79,16 @@
   ],
   "floors": [
     {
-      "id": 1,
-      "floor": "Floor 1"
-    },
-    {
       "id": 1649078282,
       "floor": "Floor 4"
+    },
+    {
+      "id": "87c13df3-804a-4d7e-b0a6-09851c400af5",
+      "floor": "Floor 2"
+    },
+    {
+      "id": "e3a61663-7b7a-42bd-b9e7-059c2f1afe02",
+      "floor": "Floor 0"
     }
   ]
 }

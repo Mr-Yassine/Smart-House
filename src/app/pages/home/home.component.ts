@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CardService } from 'src/app/services/cards/card.service';
 import { ICards } from 'src/app/models/icards';
 import { IDevices } from 'src/app/models/idevices';
